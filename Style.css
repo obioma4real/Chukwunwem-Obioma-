@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* ================= BODY ================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d; /* dark background */
+    color: #ffffff;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #111111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #00eaff; /* brand color */
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ---------------- ABOUT SECTION ---------------- */
+.about-section {
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #00eaff;
+}
+
+.about-text p {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Responsive About Section */
+@media (min-width: 768px) {
+    .about-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .about-img {
+        margin-right: 20px;
+    }
+    .about-text {
+        flex: 1;
+    }
+}
+
+/* ---------------- MUSIC SECTION ---------------- */
+.music-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.music-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #00eaff;
+}
+
+.music-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.music-card {
+    flex: 0 0 250px;
+    background: #111111;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 234, 255, 0.4);
+}
+
+.music-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.music-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00eaff;
+}
+
+.music-card .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #00eaff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.music-card .btn:hover {
+    transform: scale(1.1);
+    background: #00b8cc;
+}
+
+/* ---------------- CONTACT SECTION ---------------- */
+.contact-section {
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00eaff;
+}
+
+.contact-section p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Social Buttons */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-links .btn {
+    padding: 10px 15px;
+    background: #00eaff;
+    border-radius: 6px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.social-links .btn:hover {
+    transform: scale(1.05);
+    background: #00b8cc;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 14px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background: #00eaff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    background: #00b8cc;
+}
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
